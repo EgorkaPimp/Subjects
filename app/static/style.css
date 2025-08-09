@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Uncial Antiqua', cursive;
+    background: url("images/back_parchment.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.auth-container {
+    background: rgba(255, 248, 220, 0.75);
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #8b4513;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4b2e05;
+    text-shadow: 1px 1px 2px #fff2b2;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #4b2e05;
+    font-size: 1.1em;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    background-color: #fff8dc;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 8px #d4af37;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(#d4af37, #b8860b);
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    color: #4b2e05;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(#ffd700, #daa520);
+    transform: scale(1.05);
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.register-link a {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер для чекбокса */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Скрываем стандартный чекбокс */
+.checkbox-label input {
+    display: none;
+}
+
+/* Создаём кастомный квадрат */
+.checkbox-label span {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8b4513;
+    border-radius: 4px;
+    background-color: #fff8dc;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Состояние при наведении */
+.checkbox-label:hover span {
+    box-shadow: 0 0 5px #d4af37;
+}
+
+/* Состояние при выборе */
+.checkbox-label input:checked + span {
+    background: linear-gradient(#ffd700, #daa520);
+    border-color: #b8860b;
+    box-shadow: 0 0 10px gold, 0 0 20px #ffd700, 0 0 30px #ffec8b;
+}
+
+/* Галочка внутри */
+.checkbox-label input:checked + span::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #4b2e05;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Магическая золотая кнопка мастера */
+.master-btn {
+    background: linear-gradient(#ffd700, #daa520) !important;
+    border-color: #b8860b !important;
+    color: #4b2e05 !important;
+    box-shadow: 0 0 15px gold;
+    transform: scale(1.2);
+    animation: masterGlow 1.5s infinite ease-in-out;
+}
+
+/* Анимация пульсации */
+@keyframes masterGlow {
+    0% {
+        box-shadow: 0 0 10px gold, 0 0 20px #dfdfdf, 0 0 30px #ffec8b;
+    }
+    50% {
+        box-shadow: 0 0 20px gold, 0 0 30px #ffffff, 0 0 40px #ffec8b;
+    }
+    100% {
+        box-shadow: 0 0 10px gold, 0 0 20px #fdfdfd, 0 0 30px #ffec8b;
+    }
+}

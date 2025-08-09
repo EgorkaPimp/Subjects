@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Создание персонажа</h1>
+        <form>
+            <label for="username">Имя пользователя</label>
+            <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required />
+
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" name="email" placeholder="Введите email" required />
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Введите пароль" required />
+
+            <label for="confirm-password">Подтвердите пароль</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" required />
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="is-master" name="is-master" />
+                <span></span>
+                Я мастер
+            </label>
+
+            <button type="submit" id="register-btn">Зарегистрироваться</button>
+        </form>
+        <p class="register-link"><a href="/">Вернуться к входу</a></p>
+    </div>
+
+    <script>
+        const isMasterCheckbox = document.getElementById('is-master');
+        const registerBtn = document.getElementById('register-btn');
+
+        isMasterCheckbox.addEventListener('change', () => {
+            if (isMasterCheckbox.checked) {
+                registerBtn.classList.add('master-btn');
+            } else {
+                registerBtn.classList.remove('master-btn');
+            }
+        });
+    </script>
+</body>
+</html>
