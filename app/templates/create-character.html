@@ -10,7 +10,7 @@
 <body>
     <div class="auth-container">
         <h1>Создание персонажа</h1>
-        <form>
+        <!-- <form method="POST" action="">
             <label for="username">Имя пользователя</label>
             <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required />
 
@@ -30,7 +30,59 @@
             </label>
 
             <button type="submit" id="register-btn">Зарегистрироваться</button>
+        </form> -->
+
+
+        <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    
+    <p>
+        {{ form.username.label }}
+        <br>
+        {{ form.username(id="username", size=32, placeholder="Введите имя пользователя", required=True) }}
+    </p>
+    
+    <p>
+        {{ form.email.label }}
+        <br>
+        {{ form.email(id="email", size=32, placeholder="Введите email", required=True) }}
+    </p>
+    
+    <p>
+        {{ form.password.label }}
+        <br>
+        {{ form.password(id="password", size=32, placeholder="Введите пароль", required=True) }}
+    </p>
+    
+    <p>
+        {{ form.confirm_password.label }}
+        <br>
+        {{ form.confirm_password(id="confirm-password", size=32, placeholder="Повторите пароль", required=True) }}
+    </p>
+    
+    <p class="checkbox-wrapper">
+    <label for="is-master" class="checkbox-label">
+        {{ form.role_master(id="is-master") }}
+        <span></span>
+    </label>
+    <span class="checkbox-label-text">Я мастер</span>
+    </p>
+    
+    <p>
+        {{ form.submit(id="register-btn", class="checkbox-label") }}
+    </p>
         </form>
+
+
+        <!-- <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <p>{{ form.username.label }}<br>{{ form.username(size=32) }}</p>
+    <p>{{ form.email.label }}<br>{{ form.email(size=32) }}</p>
+    <p>{{ form.password.label }}<br>{{ form.password(size=32) }}</p>
+    <p>{{ form.confirm_password.label }}<br>{{ form.confirm_password(size=32) }}</p>
+    <p>{{ form.submit(id="register-btn") }}</p>
+        </form> -->
+
         <p class="register-link"><a href="/">Вернуться к входу</a></p>
     </div>
 

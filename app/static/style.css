@@ -23,14 +23,19 @@ h1 {
     text-shadow: 1px 1px 2px #fff2b2;
 }
 
+/* Лейблы */
 label {
     display: block;
     margin-top: 15px;
     color: #4b2e05;
     font-size: 1.1em;
+    text-align: left;
 }
 
-input {
+/* Поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -39,15 +44,19 @@ input {
     background-color: #fff8dc;
     font-family: inherit;
     font-size: 1em;
+    box-sizing: border-box;
 }
 
-input:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
     outline: none;
     border-color: #d4af37;
     box-shadow: 0 0 8px #d4af37;
 }
 
-button {
+/* Кнопка отправки */
+button, input[type="submit"] {
     margin-top: 20px;
     padding: 12px 20px;
     background: linear-gradient(#d4af37, #b8860b);
@@ -58,13 +67,16 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
     background: linear-gradient(#ffd700, #daa520);
     transform: scale(1.05);
 }
 
+/* Ссылка для регистрации */
 .register-link {
     margin-top: 15px;
     font-size: 0.9em;
@@ -87,14 +99,15 @@ button:hover {
     font-size: 1.1em;
     cursor: pointer;
     user-select: none;
+    color: #4b2e05;
 }
 
 /* Скрываем стандартный чекбокс */
-.checkbox-label input {
+.checkbox-label input[type="checkbox"] {
     display: none;
 }
 
-/* Создаём кастомный квадрат */
+/* Кастомный квадрат чекбокса */
 .checkbox-label span {
     width: 20px;
     height: 20px;
@@ -107,20 +120,20 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-/* Состояние при наведении */
+/* Эффект при наведении на чекбокс */
 .checkbox-label:hover span {
     box-shadow: 0 0 5px #d4af37;
 }
 
-/* Состояние при выборе */
-.checkbox-label input:checked + span {
+/* Состояние выбранного чекбокса */
+.checkbox-label input[type="checkbox"]:checked + span {
     background: linear-gradient(#ffd700, #daa520);
     border-color: #b8860b;
     box-shadow: 0 0 10px gold, 0 0 20px #ffd700, 0 0 30px #ffec8b;
 }
 
-/* Галочка внутри */
-.checkbox-label input:checked + span::after {
+/* Галочка внутри чекбокса */
+.checkbox-label input[type="checkbox"]:checked + span::after {
     content: "";
     position: absolute;
     left: 7px;
@@ -138,7 +151,7 @@ button:hover {
     border-color: #b8860b !important;
     color: #4b2e05 !important;
     box-shadow: 0 0 15px gold;
-    transform: scale(1.2);
+    transform: scale(1.03);
     animation: masterGlow 1.5s infinite ease-in-out;
 }
 
@@ -153,4 +166,35 @@ button:hover {
     100% {
         box-shadow: 0 0 10px gold, 0 0 20px #fdfdfd, 0 0 30px #ffec8b;
     }
+}
+.checkbox-label {
+    display: inline-flex; /* чтобы чекбокс и квадрат были рядом */
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 15px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-label span {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8b4513;
+    border-radius: 4px;
+    background-color: #fff8dc;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Эффекты и состояния для чекбокса без изменений */
+
+.checkbox-label-text {
+    color: #4b2e05;
+    font-size: 1.1em;
+    margin-top: 5px;
+    user-select: none;
 }
